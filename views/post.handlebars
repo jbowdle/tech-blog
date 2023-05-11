@@ -1,0 +1,21 @@
+<section class ="card">
+
+  <h1>post</h1>
+
+  <header>{{post.title}}</header>
+  <p>{{post.content}}</p>
+  <p>Posted by: {{post.user.username}}</p>
+  <p>{{post.createdAt}}</p>
+
+  {{#each post.comments}}
+
+  <h2>comment</h2>
+
+  <p>{{this.content}}</p>
+  <p>{{this.user.username}}</p>
+  <p>{{this.createdAt}}</p>
+  {{/each}}
+  <section>
+
+  </section>
+</section>

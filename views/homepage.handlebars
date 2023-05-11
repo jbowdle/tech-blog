@@ -1,0 +1,10 @@
+{{#each posts as |post|}}
+<section class ="card">
+  <a href="/post/{{id}}">
+    <header>{{title}}</header>
+    <p>{{content}}</p>
+    <p>Posted by: {{user.username}}</p>
+    <p>{{createdAt}}</p>
+  </a>
+</section>
+{{/each}}
