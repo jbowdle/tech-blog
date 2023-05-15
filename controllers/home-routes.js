@@ -14,13 +14,9 @@ router.get('/', async (req, res) => {
       post.get({ plain: true })
     );
 
-    // debug
-    // res.status(200).json(posts);
-    console.log(posts);
-
-    // code to be used once views are created:
     res.render('homepage', {
       posts,
+      loggedIn: req.session.loggedIn,
     });
   } catch (err) {
     console.log(err);
@@ -52,19 +48,22 @@ router.get('/post/:id', async (req, res) => {
 
     const post = postData.get({ plain: true });
 
-    // debug
-    // res.status(200).json(post);
-    console.log(post);
-
     res.render('post', {
       post,
     });
-
-    // code to be used once views are created goes here:
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
   }
+});
+
+router.get('/login', (req, res) => {
+  if (req.session.loggedIn) {
+    res.redirect('/');
+    return;
+  }
+
+  res.render('login');
 });
 
 module.exports = router;

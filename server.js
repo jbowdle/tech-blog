@@ -26,6 +26,9 @@ const sess = {
 
 app.use(session(sess));
 
+// debug
+console.log(sess);
+
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
 
