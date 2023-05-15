@@ -5,11 +5,14 @@ My posts:
 {{#each posts as |post|}}
 <section class ="card">
   <a href="/post/{{id}}">
-    <header>{{title}}</header>
+    <header class="post" data-post="{{post.id}}">{{title}}</header>
     <p>{{content}}</p>
     <p>Posted by: {{user.username}}</p>
     <p>{{createdAt}}</p>
   </a>
+  <button class="delete">Delete Post</button>
 </section>
 {{/each}}
+
+<script src="./js/updateDeletePost.js"></script>
 

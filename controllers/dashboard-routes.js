@@ -56,4 +56,19 @@ router.post('/post', checkLogin, async (req, res) => {
   }
 });
 
+router.delete('/delete', checkLogin, async (req, res) => {
+  try {
+    await Post.destroy({
+      where: {
+        id: req.body.postID,
+      },
+    });
+
+    res.status(200).json({message: "Post deleted"});
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+});
+
 module.exports = router;
