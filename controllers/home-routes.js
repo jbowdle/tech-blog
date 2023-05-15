@@ -49,7 +49,7 @@ router.get('/post/:id', async (req, res) => {
     const post = postData.get({ plain: true });
 
     res.render('post', {
-      post,
+      post, loggedIn: req.session.loggedIn
     });
   } catch (err) {
     console.log(err);
@@ -63,7 +63,7 @@ router.get('/login', (req, res) => {
     return;
   }
 
-  res.render('login');
+  res.render('login', { loggedIn: req.session.loggedIn });
 });
 
 router.get('/createPost', (req, res) => {
@@ -72,7 +72,7 @@ router.get('/createPost', (req, res) => {
     return;
   }
 
-  res.render('createPost');
+  res.render('createPost', { loggedIn: req.session.loggedIn });
 });
 
 module.exports = router;
