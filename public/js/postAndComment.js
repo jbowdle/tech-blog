@@ -14,7 +14,7 @@ const createPostFormHandler = async (event) => {
     if (response.ok) {
       const jsonData = await response.json();
       
-      document.location.replace(`/post/${jsonData.id}`);
+      document.location.replace(`/dashboard`);
     } else {
       alert('Failed to create post.');
     }
