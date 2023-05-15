@@ -49,9 +49,7 @@ router.post('/post', checkLogin, async (req, res) => {
       user_id: currentUser.id,
     });
 
-    // TODO: send user to newly created post page
-    res.status(200).json({newPost: newPost, message: 'post created'});
-
+    res.status(200).json(newPost);
   } catch (err) {
     console.log(err);
     res.status(500).json(err);

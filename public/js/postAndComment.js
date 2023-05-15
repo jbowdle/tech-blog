@@ -11,9 +11,10 @@ const createPostFormHandler = async (event) => {
       headers: { 'Content-Type': 'application/json' },
     });
 
-    // TODO: send to newly created post
     if (response.ok) {
-      document.location.replace('/');
+      const jsonData = await response.json();
+      
+      document.location.replace(`/post/${jsonData.id}`);
     } else {
       alert('Failed to create post.');
     }
