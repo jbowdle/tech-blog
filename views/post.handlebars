@@ -1,11 +1,26 @@
 <section class ="card">
 
-  <h1>post</h1>
+  <h1 id="post" data-post="{{post.id}}">post</h1>
 
   <header>{{post.title}}</header>
   <p>{{post.content}}</p>
   <p>Posted by: {{post.user.username}}</p>
   <p>{{post.createdAt}}</p>
+
+  <div class="row justify-space-between-md">
+    <div class="comment-card">
+      <h2 class="page-title">Add Comment</h2>
+      <form class="form comment-form">
+        <div class="form-group">
+          <label for="content-comment">Content:</label>
+          <input class="form-input" type="text" id="content-comment" />
+        </div>
+        <div class="form-group">
+          <button class="btn btn-primary" type="submit">Create</button>
+        </div>
+      </form>
+    </div>
+  </div>
 
   {{#each post.comments}}
 
@@ -19,3 +34,5 @@
 
   </section>
 </section>
+
+<script src="../js/comment.js"></script>

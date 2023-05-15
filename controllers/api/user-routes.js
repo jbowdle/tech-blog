@@ -1,5 +1,6 @@
 const router = require('express').Router();
-const { User } = require('../../models');
+const { Post, Comment, User } = require('../../models');
+const checkLogin = require('../../utils/helpers');
 
 // CREATE new user
 router.post('/', async (req, res) => {
@@ -69,6 +70,28 @@ router.post('/logout', (req, res) => {
     });
   } else {
     res.status(404).end();
+  }
+});
+
+router.post('/comment', checkLogin, async (req, res) => {
+  try {
+    const currentUser = await User.findOne({
+      where: {
+        username: req.session.username,
+      },
+      attributes: ['id'],
+    });
+
+    const newComment = await Comment.create({
+      content: req.body.content,
+      user_id: currentUser.id,
+      post_id: req.body.postID,
+    });
+
+    res.status(200).json(newComment);
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
   }
 });
 
