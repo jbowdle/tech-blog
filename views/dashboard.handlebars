@@ -5,10 +5,12 @@ My posts:
 {{#each posts as |post|}}
 <section class ="card">
   <a href="/post/{{id}}">
-    <header class="post" data-post="{{post.id}}">{{title}}</header>
-    <p>{{content}}</p>
-    <p>Posted by: {{user.username}}</p>
-    <p>{{createdAt}}</p>
+    <h4 class="post" data-post="{{post.id}}">{{title}}</h4>
+    <div class="card-body">
+      <p>{{content}}</p>
+      <p>Posted by: {{user.username}}</p>
+      <p>{{createdAt}}</p>
+    </div>
   </a>
   <button class="delete">Delete Post</button>
 </section>

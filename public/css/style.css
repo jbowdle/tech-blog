@@ -1,0 +1,98 @@
+:root {
+  --secondar-color: rgb(147, 56, 56);
+  --tertiary-color: rgb(171, 16, 16);
+  --card-color: rgb(4, 107, 224);
+  --title-color: rgb(129, 188, 255);
+}
+
+a {
+  color: var(--dark);
+  text-decoration: none;
+}
+
+body {
+  font-family: Arial;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  justify-content: flex-start;
+}
+
+nav {
+  background-color: var(--secondar-color);
+  margin: 0;
+  padding: 14px 20px;
+  text-decoration: none;
+  text-align: center;
+  display: flex;
+  justify-content: space-around;
+  font-size: large;
+  font-weight: 700;
+}
+
+header {
+  background-color: var(--tertiary-color);
+  margin: 0;
+  padding: 0;
+}
+
+header h1 {
+  margin: 0;
+  padding: 40px;
+  text-align: center;
+}
+
+main {
+  display: flex;
+  flex-wrap: wrap;
+  flex-grow: 1;
+}
+
+
+#top {
+  width: 100%;
+  margin: 0;
+}
+
+.card {
+  background-color: var(--card-color);
+  margin: 20px;
+  flex: 0 1 auto;
+  border: 7px double var(--dark);
+  border-radius: 10px;
+}
+
+.card h4 {
+  background-color: var(--title-color);
+}
+
+.feed {
+  flex: 4;
+  padding: 50px;
+  margin: 0 auto;
+}
+
+.login-card {
+  margin: 0 0 20px 0;
+  flex: 0 0 50%;
+  max-width: 50%;
+  padding: 5px;
+  border: 3px solid var(--dark);
+  border-radius: var(--border-radius);
+  border-style: double;
+  border-width: thick;
+}
+
+.card h4 {
+  color: var(--light);
+  font-weight: bold;
+  text-transform: uppercase;
+  margin: 0;
+  padding: 0.625rem;
+  border-radius: calc(0.18rem - 1px) calc(0.18rem - 1px) 0 0;
+}
+
+.card-body {
+  padding: 15px 7px 15px 7px;
+}
