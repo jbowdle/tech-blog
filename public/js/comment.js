@@ -2,7 +2,7 @@ const createCommentFormHandler = async (event) => {
   event.preventDefault();
 
   const content = document.querySelector('#content-comment').value.trim();
-  const post = document.querySelector('#post');
+  const post = document.querySelector('.post');
   const postID = post.dataset.post;
 
   if (content) {
